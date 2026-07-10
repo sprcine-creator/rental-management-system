@@ -1,0 +1,77 @@
+{% extends "layouts/base.html" %}
+
+{% block page_title %}
+Customers
+{% endblock %}
+
+{% block content %}
+
+{% include "components/page_header.html" with title="Customers" subtitle="Manage all your customers" button_text="+ Add Customer" button_url="/customers/add/" %}
+
+{% include "components/search_bar.html" with placeholder="Search customers..." search=search %}
+
+<table class="table table-striped table-hover shadow-sm bg-white">
+
+    <thead class="table-dark">
+
+        <tr>
+            <th>Name</th>
+            <th>Contact Person</th>
+            <th>Phone</th>
+            <th width="120">Action</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {% for customer in customers %}
+
+        <tr>
+
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.contact_person }}</td>
+            <td>{{ customer.phone }}</td>
+
+            <td>
+
+                <a
+                    href="{% url 'customer_edit' customer.id %}"
+                    class="btn btn-warning btn-sm">
+
+                    Edit
+
+                </a>
+
+                <a
+                    href="{% url 'customer_delete' customer.id %}"
+                    class="btn btn-danger btn-sm"
+                    onclick="return confirm('Archive this customer?');">
+
+                    Archive
+
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% empty %}
+
+        <tr>
+
+            <td colspan="4" class="text-center">
+
+                No Customers Found
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}

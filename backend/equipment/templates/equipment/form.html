@@ -1,0 +1,34 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">
+
+Add Equipment
+
+</h2>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button
+        class="btn btn-success">
+
+        Save
+
+    </button>
+
+    <a
+        href="/equipment/"
+        class="btn btn-secondary">
+
+        Cancel
+
+    </a>
+
+</form>
+
+{% endblock %}

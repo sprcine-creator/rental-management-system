@@ -1,0 +1,49 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block page_title %}
+Business Overview
+{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4">
+    Good Morning, Tom 👋
+</h2>
+
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="dashboard-card">
+            <h6>Revenue (FY)</h6>
+            <h3>₹0</h3>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="dashboard-card">
+            <h6>Outstanding</h6>
+            <h3>₹0</h3>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="dashboard-card">
+            <h6>GST Liability</h6>
+            <h3>₹0</h3>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="dashboard-card">
+            <h6>Draft Bills</h6>
+            <h3>0</h3>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

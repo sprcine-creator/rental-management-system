@@ -1,0 +1,115 @@
+{% extends "layouts/base.html" %}
+
+{% block page_title %}
+Project Workspace
+{% endblock %}
+
+{% block content %}
+
+<div class="card shadow-sm mb-4">
+
+    <div class="card-body">
+
+        <div class="d-flex justify-content-between">
+
+            <div>
+
+                <h3>{{ project.project_name }}</h3>
+
+                <div class="text-muted">
+
+                    {{ project.customer.name }}
+
+                </div>
+
+            </div>
+
+            <div class="text-end">
+
+                <span class="badge bg-success">
+
+                    {{ project.status }}
+
+                </span>
+
+                <br><br>
+
+                {{ project.project_type }}
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="row">
+
+            <div class="col-md-4">
+
+                <strong>Started</strong>
+
+                <br>
+
+                {{ project.start_date }}
+
+            </div>
+
+            <div class="col-md-4">
+
+                <strong>Project Age</strong>
+
+                <br>
+
+                Coming Soon
+
+            </div>
+
+            <div class="col-md-4">
+
+                <strong>Outstanding</strong>
+
+                <br>
+
+                ₹0
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-3">
+
+        {% include "components/project_navigation.html" %}
+
+    </div>
+
+    <div class="col-md-9">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body">
+
+                <h4>Overview</h4>
+
+                <hr>
+
+                Welcome to the Project Workspace.
+
+                <br><br>
+
+                Everything related to this project will appear here.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
