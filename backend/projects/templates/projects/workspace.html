@@ -42,35 +42,85 @@ Project Workspace
 
         <hr>
 
-        <div class="row">
+        <div class="row g-3">
 
-            <div class="col-md-4">
+            <div class="col-md">
 
-                <strong>Started</strong>
+                <div class="card shadow-sm">
 
-                <br>
+                    <div class="card-body">
 
-                {{ project.start_date }}
+                        <small class="text-muted">Started</small>
 
-            </div>
+                        <h6>{{ project.start_date }}</h6>
 
-            <div class="col-md-4">
+                    </div>
 
-                <strong>Project Age</strong>
-
-                <br>
-
-                Coming Soon
+                </div>
 
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md">
 
-                <strong>Outstanding</strong>
+                <div class="card shadow-sm">
 
-                <br>
+                    <div class="card-body">
 
-                ₹0
+                        <small class="text-muted">Project Age</small>
+
+                        <h6>{{ project_age }}</h6>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md">
+
+                <div class="card shadow-sm">
+
+                    <div class="card-body">
+
+                        <small class="text-muted">Last Billing</small>
+
+                        <h6>—</h6>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md">
+
+                <div class="card shadow-sm">
+
+                    <div class="card-body">
+
+                        <small class="text-muted">Outstanding</small>
+
+                        <h6>₹0</h6>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md">
+
+                <div class="card shadow-sm">
+
+                    <div class="card-body">
+
+                        <small class="text-muted">Last Invoice</small>
+
+                        <h6>Not Generated</h6>
+
+                    </div>
+
+                </div>
 
             </div>
 

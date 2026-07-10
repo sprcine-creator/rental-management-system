@@ -4,6 +4,8 @@ from django.contrib import messages
 from .models import Project
 from .forms import ProjectForm
 
+from datetime import date
+
 
 def project_list(request):
 
@@ -101,10 +103,37 @@ def project_workspace(request, pk):
         pk=pk,
     )
 
+    
+
+    today = date.today()
+
+    months = (
+        (today.year - project.start_date.year) * 12
+        + today.month
+        - project.start_date.month
+    )
+
+    years = months // 12
+    remaining_months = months % 12
+
+    if years > 0:
+        age = f"{years} Year{'s' if years > 1 else ''}"
+
+        if remaining_months:
+            age += f" {remaining_months} Month{'s' if remaining_months > 1 else ''}"
+
+    elif months > 0:
+        age = f"{months} Month{'s' if months > 1 else ''}"
+
+    else:
+        days = (today - project.start_date).days
+        age = f"{days} Day{'s' if days != 1 else ''}"
+
     return render(
         request,
         "projects/workspace.html",
         {
             "project": project,
+            "project_age": age,
         },
     )
